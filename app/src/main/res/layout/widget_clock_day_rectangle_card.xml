@@ -25,10 +25,10 @@
 
             <TextClock
                 android:id="@+id/widget_clock_day_clock_light"
-                android:fontFamily="sans-serif-light"
                 android:layout_centerInParent="true"
                 android:layout_marginStart="@dimen/little_margin"
                 android:layout_marginEnd="@dimen/little_margin"
+                android:fontFamily="@font/retro_mode"
                 style="@style/widget_text_clock"
                 tools:text="9:10"
                 tools:ignore="RelativeOverlap,RtlHardcoded" />
@@ -37,6 +37,7 @@
                 android:id="@+id/widget_clock_day_clock_aa_light"
                 android:layout_toEndOf="@id/widget_clock_day_clock_light"
                 android:layout_alignBaseline="@id/widget_clock_day_clock_light"
+                android:fontFamily="@font/retro_mode"
                 style="@style/widget_text_clock_aa"
                 tools:text="AM"
                 tools:ignore="RelativeOverlap,RtlHardcoded" />
@@ -165,6 +166,7 @@
                 android:text="@string/widget_ellipsis"
                 android:textSize="@dimen/widget_content_text_size"
                 android:maxLines="2"
+                android:fontFamily="@font/retro_mode"
                 style="@style/widget_content_text"
                 tools:text="Partly Could\n21℃"
                 tools:ignore="RtlHardcoded" />
@@ -177,6 +179,7 @@
                 android:textSize="@dimen/widget_content_text_size"
                 android:maxLines="2"
                 android:textAlignment="viewEnd"
+                android:fontFamily="@font/retro_mode"
                 style="@style/widget_content_text"
                 tools:text="              17°\n              23°"
                 tools:ignore="RtlHardcoded" />
@@ -204,6 +207,7 @@
                     android:text="@string/widget_refreshing"
                     android:textSize="@dimen/widget_time_text_size"
                     android:layout_centerInParent="true"
+                    android:fontFamily="@font/retro_mode"
                     style="@style/widget_content_text"
                     tools:text="San Francisco 17:00"
                     tools:ignore="RtlHardcoded" />

@@ -56,6 +56,47 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/widget_clock_day_clock_retroContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextClock
+                android:id="@+id/widget_clock_day_clock_1_retro"
+                android:textSize="64sp"
+                android:textAlignment="center"
+                android:format24Hour="HH"
+                android:format12Hour="hh"
+                android:fontFamily="@font/retro_mode"
+                android:layout_marginTop="-8dp"
+                android:layout_centerHorizontal="true"
+                android:shadowColor="@color/colorWidgetTextShadow"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="1"
+                style="@style/widget_text_clock"
+                tools:text="09" />
+
+            <TextClock
+                android:id="@+id/widget_clock_day_clock_2_retro"
+                android:textSize="64sp"
+                android:textAlignment="center"
+                android:format24Hour="mm"
+                android:format12Hour="mm"
+                android:fontFamily="@font/retro_mode"
+                android:layout_marginTop="-16dp"
+                android:layout_marginBottom="-4dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/widget_clock_day_clock_1_retro"
+                android:shadowColor="@color/colorWidgetTextShadow"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="1"
+                style="@style/widget_text_clock"
+                tools:text="10" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
             android:id="@+id/widget_clock_day_clock_normalContainer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -210,6 +251,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_below="@id/widget_clock_day_icon"
                 android:layout_marginTop="2dp"
+                android:fontFamily="@font/retro_mode"
                 style="@style/widget_content_text"
                 tools:text="Overcast 23℃"
                 tools:ignore="RtlHardcoded" />
@@ -226,6 +268,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_below="@id/widget_clock_day_title"
                 android:layout_marginTop="2dp"
+                android:fontFamily="@font/retro_mode"
                 style="@style/widget_content_text"
                 tools:text="San Francisco WEN 19:36"
                 tools:ignore="RtlHardcoded" />

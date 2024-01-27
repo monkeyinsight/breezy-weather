@@ -140,6 +140,10 @@ object ClockDayVerticalWidgetIMP : AbstractRemoteViewsPresenter() {
                 setTextColor(R.id.widget_clock_day_title, color.textColor)
                 setTextColor(R.id.widget_clock_day_subtitle, color.textColor)
                 setTextColor(R.id.widget_clock_day_time, color.textColor)
+                setTextColor(R.id.widget_clock_day_clock_1_retro, color.textColor)
+                setTextColor(R.id.widget_clock_day_clock_2_retro, color.textColor)
+                setTextColor(R.id.widget_clock_day_clock_retro, color.textColor)
+                setTextColor(R.id.widget_clock_day_clock_aa_retro, color.textColor)
             }
         }
         if (textSize != 100) {
@@ -161,6 +165,10 @@ object ClockDayVerticalWidgetIMP : AbstractRemoteViewsPresenter() {
                 setTextViewTextSize(R.id.widget_clock_day_clock_2_light, TypedValue.COMPLEX_UNIT_PX, verticalClockSize)
                 setTextViewTextSize(R.id.widget_clock_day_clock_2_normal, TypedValue.COMPLEX_UNIT_PX, verticalClockSize)
                 setTextViewTextSize(R.id.widget_clock_day_clock_2_black, TypedValue.COMPLEX_UNIT_PX, verticalClockSize)
+                setTextViewTextSize(R.id.widget_clock_day_clock_1_retro, TypedValue.COMPLEX_UNIT_PX, verticalClockSize)
+                setTextViewTextSize(R.id.widget_clock_day_clock_2_retro, TypedValue.COMPLEX_UNIT_PX, verticalClockSize)
+                setTextViewTextSize(R.id.widget_clock_day_clock_retro, TypedValue.COMPLEX_UNIT_PX, clockSize)
+                setTextViewTextSize(R.id.widget_clock_day_clock_aa_retro, TypedValue.COMPLEX_UNIT_PX, clockAASize)
                 setTextViewTextSize(
                     R.id.widget_clock_day_date, TypedValue.COMPLEX_UNIT_PX,
                     getTitleSize(context, viewStyle) * textSize / 100f
@@ -189,6 +197,7 @@ object ClockDayVerticalWidgetIMP : AbstractRemoteViewsPresenter() {
                     setViewVisibility(R.id.widget_clock_day_clock_analogContainer_auto, View.GONE)
                     setViewVisibility(R.id.widget_clock_day_clock_analogContainer_light, View.GONE)
                     setViewVisibility(R.id.widget_clock_day_clock_analogContainer_dark, View.GONE)
+                    setViewVisibility(R.id.widget_clock_day_clock_retroContainer, View.GONE)
                 }
             }
             "black" -> {
@@ -199,6 +208,18 @@ object ClockDayVerticalWidgetIMP : AbstractRemoteViewsPresenter() {
                     setViewVisibility(R.id.widget_clock_day_clock_analogContainer_auto, View.GONE)
                     setViewVisibility(R.id.widget_clock_day_clock_analogContainer_light, View.GONE)
                     setViewVisibility(R.id.widget_clock_day_clock_analogContainer_dark, View.GONE)
+                    setViewVisibility(R.id.widget_clock_day_clock_retroContainer, View.GONE)
+                }
+            }
+            "retro" -> {
+                views.apply {
+                    setViewVisibility(R.id.widget_clock_day_clock_lightContainer, View.GONE)
+                    setViewVisibility(R.id.widget_clock_day_clock_normalContainer, View.GONE)
+                    setViewVisibility(R.id.widget_clock_day_clock_blackContainer, View.GONE)
+                    setViewVisibility(R.id.widget_clock_day_clock_analogContainer_auto, View.GONE)
+                    setViewVisibility(R.id.widget_clock_day_clock_analogContainer_light, View.GONE)
+                    setViewVisibility(R.id.widget_clock_day_clock_analogContainer_dark, View.GONE)
+                    setViewVisibility(R.id.widget_clock_day_clock_retroContainer, View.VISIBLE)
                 }
             }
             "analog" -> {
@@ -224,6 +245,7 @@ object ClockDayVerticalWidgetIMP : AbstractRemoteViewsPresenter() {
                             View.GONE
                         } else if (color.textType == NotificationTextColor.DARK) View.VISIBLE else View.GONE
                     )
+                    setViewVisibility(R.id.widget_clock_day_clock_retroContainer, View.GONE)
                 }
             }
             else -> {
@@ -234,6 +256,7 @@ object ClockDayVerticalWidgetIMP : AbstractRemoteViewsPresenter() {
                     setViewVisibility(R.id.widget_clock_day_clock_analogContainer_auto, View.GONE)
                     setViewVisibility(R.id.widget_clock_day_clock_analogContainer_light, View.GONE)
                     setViewVisibility(R.id.widget_clock_day_clock_analogContainer_dark, View.GONE)
+                    setViewVisibility(R.id.widget_clock_day_clock_retroContainer, View.GONE)
                 }
             }
         }
@@ -410,6 +433,24 @@ object ClockDayVerticalWidgetIMP : AbstractRemoteViewsPresenter() {
             R.id.widget_clock_day_clock_light,
             getAlarmPendingIntent(
                 context, Widgets.CLOCK_DAY_VERTICAL_PENDING_INTENT_CODE_CLOCK_LIGHT
+            )
+        )
+        views.setOnClickPendingIntent(
+            R.id.widget_clock_day_clock_retro,
+            getAlarmPendingIntent(
+                context, Widgets.CLOCK_DAY_VERTICAL_PENDING_INTENT_CODE_CLOCK_RETRO
+            )
+        )
+        views.setOnClickPendingIntent(
+            R.id.widget_clock_day_clock_1_retro,
+            getAlarmPendingIntent(
+                context, Widgets.CLOCK_DAY_VERTICAL_PENDING_INTENT_CODE_CLOCK_1_RETRO
+            )
+        )
+        views.setOnClickPendingIntent(
+            R.id.widget_clock_day_clock_2_retro,
+            getAlarmPendingIntent(
+                context, Widgets.CLOCK_DAY_VERTICAL_PENDING_INTENT_CODE_CLOCK_2_RETRO
             )
         )
         views.setOnClickPendingIntent(

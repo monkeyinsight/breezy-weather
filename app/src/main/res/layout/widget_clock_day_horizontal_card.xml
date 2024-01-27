@@ -55,6 +55,38 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/widget_clock_day_clock_retroContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true">
+
+                <TextClock
+                    android:id="@+id/widget_clock_day_clock_retro"
+                    android:fontFamily="sans-serif-retro"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/normal_margin"
+                    android:layout_marginEnd="@dimen/little_margin"
+                    android:layout_marginTop="-2dp"
+                    android:layout_marginBottom="-2dp"
+                    android:textSize="48dp"
+                    style="@style/widget_text_clock"
+                    tools:text="9:10"
+                    tools:ignore="RelativeOverlap,RtlHardcoded,SpUsage" />
+
+                <TextClock
+                    android:id="@+id/widget_clock_day_clock_aa_retro"
+                    android:layout_toEndOf="@id/widget_clock_day_clock_retro"
+                    android:layout_alignBaseline="@id/widget_clock_day_clock_retro"
+                    style="@style/widget_text_clock_aa"
+                    tools:text="AM"
+                    tools:ignore="RelativeOverlap,RtlHardcoded" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
                 android:id="@+id/widget_clock_day_clock_normalContainer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
